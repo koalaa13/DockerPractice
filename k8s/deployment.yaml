@@ -22,6 +22,23 @@ spec:
       containers:
         - name: kuber-app
           image: koalaa13/hw2-repository
+          imagePullPolicy: "Always"
+          env:
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: psql-secret
+                  key: dbPassword
+            - name: SPRING_DATASOURCE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config-map
+                  key: dbUrl
+            - name: SPRING_DATASOURCE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: psql-secret
+                  key: dbUser
           ports:
             - name: web
               containerPort: 8000
