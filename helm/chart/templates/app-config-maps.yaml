@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  dbUrl: jdbc:postgresql://postgresql:5432/{{ .Values.db.name }}?useSSL=false
+  dbName: {{ .Values.db.name }}
+kind: ConfigMap
+metadata:
+  name: app-config-map
