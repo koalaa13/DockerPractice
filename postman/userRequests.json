@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "a8e3b5bc-a7f9-48a9-bd2a-a4a23e3ab8ca",
+		"name": "HW4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17525761"
+	},
+	"item": [
+		{
+			"name": "getUnexistingUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://arch.homework/user/1",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"johndoe589\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"email\": \"bestjohn@doe.com\",\n  \"phone\": \"+71002003040\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/user",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getExistingUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://arch.homework/user/1",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "changeExistingUser",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"firstName\": \"Bob\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/user/1",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getExistingUserAfterChange",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://arch.homework/user/1",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteExistingUser",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://arch.homework/user/1",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUnexistingUserAfterDelete",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://arch.homework/user/1",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
