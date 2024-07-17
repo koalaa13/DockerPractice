@@ -27,5 +27,5 @@
 ***Postman collections***
 
 Postman collections are exported to ```./postman``` folder.
-```postmanRequests.json``` is collection for testing /health routes
-```userRequests.json``` is collection for testing user requests
+* ```postmanRequests.json``` is collection for testing /health routes
+* ```userRequests.json``` is collection for testing user requests
