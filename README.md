@@ -3,6 +3,8 @@
 2) To build image locally using docker use command: ```docker build -t <name>```
 3) This image is public on docker hub, so you can just run it with ```docker run koalaa13/hw2-repository``` or ```docker run -p 8000:8000 koalaa13/hw2-repository```
 
+***MANIFESTS IN K8S FOLDER ARE OUTDATED USE HELM INSTEAD***
+
 ***Minikube guide:*** 
 1) To start app in minikube do steps:
    * ```minikube start``` to start minikube, install it if you didn't do this
