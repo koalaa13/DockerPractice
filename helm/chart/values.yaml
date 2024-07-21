@@ -1,14 +1,9 @@
-db:
-  name: app
-  defaultUser: postgres
-  defaultPassword: changeme
-
 replicaCount: 3
 
-persistentVolume:
-  folder: "~/Desktop/volume"
-  storage: 1Gi
-  claim:
-    storage: 100Mi
+global:
+  postgresql:
+    auth:
+      database: app
+      postgresPassword: changeme
 
 port: 8000

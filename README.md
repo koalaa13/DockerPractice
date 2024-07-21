@@ -12,19 +12,16 @@
 2) To delete app from minikube use ```kubectl delete -f k8s/.```
 
 ***Helm guide:***
-1) To install app in kuber use command: ```helm install <your_app_name> ./helm/chart```
-2) To uninstall app from kuber use command ```helm uninstall <your_app_name>```
-3) To change default values of helm's ```values.yaml``` use ```--set valueName=overridenValue```
+1) ```helm dependency build ./helm/chart``` to build dependencies
+2) To install app in kuber use command: ```helm install <your_app_name> ./helm/chart```
+3) To uninstall app from kuber use command ```helm uninstall <your_app_name>```
+4) To change default values of helm's ```values.yaml``` use ```--set valueName=overridenValue```
 
 ***Helm values:***
-1) ```db.name``` - name of created database
-2) ```db.defaultUser``` - name of database user
-3) ```db.defaultPassword``` - password of default database user
-4) ```replicaCount - counts``` of created app's pods 
-5) ```port - containers``` port for host app on
-6) ```persistentVolume.folder``` - folder for database persistent volume
-7) ```persistentVolume.storage``` - storage capacity of database persistent volume
-8) ```persistentVolume.claim.storage``` - storage capacity for database persistent volume claim
+1) ```global.postgresql.auth.database``` - name of created database
+2) ```global.postgresql.auth.postgresPassword``` - password of default database user
+3) ```replicaCount``` - counts of created app's pods 
+4) ```port``` - containers port for host app on
 
 ***Postman collections***
 

@@ -27,8 +27,8 @@ spec:
             - name: SPRING_DATASOURCE_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: psql-secret
-                  key: dbPassword
+                  name: {{ .Release.Name }}-postgresql
+                  key: postgres-password
             - name: SPRING_DATASOURCE_URL
               valueFrom:
                 configMapKeyRef:
@@ -36,8 +36,8 @@ spec:
                   key: dbUrl
             - name: SPRING_DATASOURCE_USERNAME
               valueFrom:
-                secretKeyRef:
-                  name: psql-secret
+                configMapKeyRef:
+                  name: app-config-map
                   key: dbUser
           ports:
             - name: web
