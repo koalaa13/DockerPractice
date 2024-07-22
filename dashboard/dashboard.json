@@ -18,7 +18,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 28,
+  "id": 29,
   "links": [],
   "panels": [
     {
@@ -78,8 +78,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -173,8 +172,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -268,8 +266,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -363,8 +360,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -458,8 +454,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -567,8 +562,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -662,8 +656,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -757,8 +750,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -852,8 +844,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -947,8 +938,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1056,8 +1046,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1094,7 +1083,7 @@
                 "uid": "prometheus"
               },
               "editorMode": "code",
-              "expr": "avg(rate(container_cpu_usage_seconds_total{pod=~\"kuber-deployment-.*\"}[5m]))without(cpu)",
+              "expr": "avg(rate(container_cpu_usage_seconds_total{pod=~\"kuber-deployment-.*\"}[5m]))without(cpu, service)",
               "instant": false,
               "legendFormat": "__auto",
               "range": true,
@@ -1151,8 +1140,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1211,9 +1199,9 @@
     "list": [
       {
         "current": {
-          "selected": true,
-          "text": "user/.*",
-          "value": "user/.*"
+          "selected": false,
+          "text": "user.*",
+          "value": "user.*"
         },
         "hide": 0,
         "includeAll": false,
@@ -1228,20 +1216,20 @@
           },
           {
             "selected": true,
-            "text": "user/.*",
-            "value": "user/.*"
+            "text": "user.*",
+            "value": "user.*"
           }
         ],
-        "query": "health, user/.*",
+        "query": "health, user.*",
         "queryValue": "",
         "skipUrlSync": false,
         "type": "custom"
       },
       {
         "current": {
-          "selected": true,
-          "text": "GET",
-          "value": "GET"
+          "selected": false,
+          "text": "POST",
+          "value": "POST"
         },
         "hide": 0,
         "includeAll": false,
@@ -1250,12 +1238,12 @@
         "name": "method",
         "options": [
           {
-            "selected": true,
+            "selected": false,
             "text": "GET",
             "value": "GET"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "POST",
             "value": "POST"
           },
@@ -1285,6 +1273,6 @@
   "timezone": "browser",
   "title": "App dashboard",
   "uid": "ads91lfojgef4f",
-  "version": 3,
+  "version": 2,
   "weekStart": ""
 }

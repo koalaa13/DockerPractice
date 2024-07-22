@@ -31,3 +31,13 @@ ingress-nginx:
         additionalLabels:
           release: prometheus
         enabled: true
+
+prometheus-postgres-exporter:
+  serviceMonitor:
+    enabled: true
+  config:
+    datasource:
+      host: app-postgresql
+      database: app
+      user: postgres
+      password: changeme

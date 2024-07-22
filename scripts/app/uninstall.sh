@@ -1,1 +1,1 @@
-helm uninstall myapp
+helm uninstall app

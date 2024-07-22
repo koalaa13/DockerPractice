@@ -1,1 +1,1 @@
-helm install myapp ./helm/chart
+helm install app ./helm/chart
