@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
-  dbUrl: jdbc:postgresql://{{ .Release.Name}}-postgresql:5432/{{ .Values.global.postgresql.auth.database }}?useSSL=false
-  dbName: {{ .Values.global.postgresql.auth.database }}
+  dbUrl: jdbc:postgresql://{{ .Release.Name}}-postgresql:5432/{{ .Values.postgresql.auth.database }}?useSSL=false
+  dbName: {{ .Values.postgresql.auth.database }}
   dbUser: postgres
 kind: ConfigMap
 metadata:

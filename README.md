@@ -12,14 +12,16 @@
 2) To delete app from minikube use ```kubectl delete -f k8s/.```
 
 ***Helm guide:***
+
+There are nginx and prometheus dependencies in chart, so you don't need to install it manually.
 1) ```helm dependency build ./helm/chart``` to build dependencies
 2) To install app in kuber use command: ```helm install <your_app_name> ./helm/chart```
 3) To uninstall app from kuber use command ```helm uninstall <your_app_name>```
 4) To change default values of helm's ```values.yaml``` use ```--set valueName=overridenValue```
 
-***Helm values:***
-1) ```global.postgresql.auth.database``` - name of created database
-2) ```global.postgresql.auth.postgresPassword``` - password of default database user
+***Helm values you might want to change:***
+1) ```postgresql.auth.database``` - name of created database
+2) ```postgresql.auth.postgresPassword``` - password of default database user
 3) ```replicaCount``` - counts of created app's pods 
 4) ```port``` - containers port for host app on
 
