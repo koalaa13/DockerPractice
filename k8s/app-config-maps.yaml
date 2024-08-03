@@ -1,6 +1,0 @@
-apiVersion: v1
-data:
-  dbUrl: jdbc:postgresql://postgresql:5432/app?useSSL=false
-kind: ConfigMap
-metadata:
-  name: app-config-map
