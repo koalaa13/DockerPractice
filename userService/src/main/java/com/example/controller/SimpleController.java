@@ -1,9 +1,9 @@
-package com.example.hw2.controller;
+package com.example.controller;
 
-import com.example.hw2.bean.UserMapper;
-import com.example.hw2.model.User;
-import com.example.hw2.model.dto.UserDto;
-import com.example.hw2.repository.UserRepository;
+import com.example.bean.UserMapper;
+import com.example.model.User;
+import com.example.model.dto.UserDto;
+import com.example.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

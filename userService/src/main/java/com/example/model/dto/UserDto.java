@@ -1,27 +1,11 @@
-package com.example.hw2.model;
+package com.example.model.dto;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "users")
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+public class UserDto {
     private String username;
     private String firstName;
     private String lastName;
     private String email;
     private String phone;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getUsername() {
         return username;

@@ -16,6 +16,7 @@
     <description>Project for homeworks for otus microservice course</description>
     <modules>
         <module>userService</module>
+        <module>balanceService</module>
     </modules>
 
     <repositories>

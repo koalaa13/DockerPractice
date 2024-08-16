@@ -1,7 +1,7 @@
-package com.example.hw2.bean;
+package com.example.bean;
 
-import com.example.hw2.model.User;
-import com.example.hw2.model.dto.UserDto;
+import com.example.model.User;
+import com.example.model.dto.UserDto;
 import org.mapstruct.BeanMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;

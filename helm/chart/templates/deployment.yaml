@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: kuber-app
-          image: koalaa13/hw2-repository
+          image: koalaa13/user-service
           imagePullPolicy: "Always"
           env:
             - name: SPRING_DATASOURCE_PASSWORD
