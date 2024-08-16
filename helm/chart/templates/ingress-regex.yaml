@@ -15,6 +15,6 @@ spec:
             pathType: ImplementationSpecific
             backend:
               service:
-                name: kuber-service
+                name: user-service
                 port:
                   number: 80

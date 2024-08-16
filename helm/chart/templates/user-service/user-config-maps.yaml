@@ -5,4 +5,4 @@ data:
   dbUser: postgres
 kind: ConfigMap
 metadata:
-  name: app-config-map
+  name: user-config-map

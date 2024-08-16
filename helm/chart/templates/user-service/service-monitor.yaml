@@ -1,12 +1,12 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: metrics-monitor
+  name: user-metrics-monitor
   labels:
-    app: metrics-monitor
+    app: user-metrics-monitor
 spec:
   endpoints:
-    - port: metrics
+    - port: user-metrics
       scrapeTimeout: 30s
       path: /actuator/prometheus
       honorLabels: true
@@ -16,4 +16,4 @@ spec:
       - default
   selector:
     matchLabels:
-      app: kuber-service
+      app: user-service

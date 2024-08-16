@@ -1,11 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kuber-deployment
+  name: user-deployment
   labels:
-    app: kuber-deployment
+    app: user-deployment
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: {{ .Values.userService.replicaCount }}
   selector:
     matchLabels:
       env: prod
@@ -20,7 +20,7 @@ spec:
         env: prod
     spec:
       containers:
-        - name: kuber-app
+        - name: user-app
           image: koalaa13/user-service
           imagePullPolicy: "Always"
           env:
@@ -32,20 +32,22 @@ spec:
             - name: SPRING_DATASOURCE_URL
               valueFrom:
                 configMapKeyRef:
-                  name: app-config-map
+                  name: user-config-map
                   key: dbUrl
             - name: SPRING_DATASOURCE_USERNAME
               valueFrom:
                 configMapKeyRef:
-                  name: app-config-map
+                  name: user-config-map
                   key: dbUser
+            - name: SPRING_SERVER_PORT
+              value: '{{ .Values.userService.port }}'
           ports:
             - name: web
-              containerPort: {{ .Values.port }}
+              containerPort: {{ .Values.userService.port }}
           readinessProbe:
             httpGet:
               path: /health
-              port: {{ .Values.port }}
+              port: {{ .Values.userService.port }}
               scheme: HTTP
             initialDelaySeconds: 10
             periodSeconds: 30
@@ -55,7 +57,7 @@ spec:
           livenessProbe:
             httpGet:
               path: /health
-              port: {{ .Values.port }}
+              port: {{ .Values.userService.port }}
               scheme: HTTP
             initialDelaySeconds: 20
             periodSeconds: 60

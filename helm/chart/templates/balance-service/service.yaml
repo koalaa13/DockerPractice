@@ -1,15 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: kuber-service
+  name: balance-service
   labels:
-    app: kuber-service
+    app: balance-service
 spec:
   selector:
     env: prod
   ports:
     - protocol: TCP
-      name: metrics
       port: 80
-      targetPort: {{ .Values.port }}
+      targetPort: {{ .Values.balanceService.port }}
   type: ClusterIP

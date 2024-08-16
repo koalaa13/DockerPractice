@@ -12,6 +12,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: kuber-service
+                name: user-service
                 port:
                   number: 80

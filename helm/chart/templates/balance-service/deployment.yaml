@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: balance-deployment
+  labels:
+    app: balance-deployment
+spec:
+  replicas: {{ .Values.balanceService.replicaCount }}
+  selector:
+    matchLabels:
+      env: prod
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        env: prod
+    spec:
+      containers:
+        - name: balance-app
+          image: koalaa13/balance-service
+          imagePullPolicy: "Always"
+          env:
+            - name: SPRING_SERVER_PORT
+              value: '{{ .Values.balanceService.port }}'
+          ports:
+            - name: web
+              containerPort: {{ .Values.balanceService.port }}
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: {{ .Values.balanceService.port }}
+              scheme: HTTP
+            initialDelaySeconds: 10
+            periodSeconds: 30
+            successThreshold: 1
+            failureThreshold: 3
+            timeoutSeconds: 3
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: {{ .Values.balanceService.port }}
+              scheme: HTTP
+            initialDelaySeconds: 20
+            periodSeconds: 60
+            successThreshold: 1
+            failureThreshold: 3
+            timeoutSeconds: 3

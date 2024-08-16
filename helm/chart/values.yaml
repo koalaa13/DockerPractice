@@ -1,11 +1,15 @@
-replicaCount: 3
+userService:
+  replicaCount: 3
+  port: 8000
+
+balanceService:
+  replicaCount: 3
+  port: 8000
 
 postgresql:
   auth:
     database: app
     postgresPassword: changeme
-
-port: 8000
 
 kube-prometheus-stack:
   prometheus:
