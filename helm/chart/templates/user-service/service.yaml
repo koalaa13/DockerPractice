@@ -6,7 +6,7 @@ metadata:
     app: user-service
 spec:
   selector:
-    env: prod
+    tier: user
   ports:
     - protocol: TCP
       name: user-metrics

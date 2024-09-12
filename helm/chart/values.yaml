@@ -3,7 +3,7 @@ userService:
   port: 8000
 
 balanceService:
-  replicaCount: 3
+  replicaCount: 2
   port: 8000
 
 postgresql:

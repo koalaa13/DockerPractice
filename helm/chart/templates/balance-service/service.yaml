@@ -6,7 +6,7 @@ metadata:
     app: balance-service
 spec:
   selector:
-    env: prod
+    tier: balance
   ports:
     - protocol: TCP
       port: 80
